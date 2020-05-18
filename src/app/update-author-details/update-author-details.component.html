@@ -1,0 +1,28 @@
+<section [class.hide]="isDataSubmitted">
+        <div class="input-group">
+            <label>ID</label>
+            <input type="number" name="id" (keyup)="setValue($event)" [value]=[bookdetails.id]/>
+       </div>
+      <div class="input-group">
+           <label>BookName</label>
+           <input type="text" name="bookname" (keyup)="setValue($event)" [value]=[bookdetails.bookname]/>
+      </div>
+      <div class="input-group">
+        <label>Author Name</label>
+        <input type="text" name="authorName" (keyup)="setValue($event)" [value]=[bookdetails.authorName]/>
+    </div>  
+    
+    
+    <button (click)="submitData()">Submit</button>
+    </section>
+    
+    <section [class.hide]="!isDataSubmitted">
+      <p>Thank you for your details</p>
+      <hr>
+      <p>ID: {{ bookdetails.id }}</p>
+      <p>Book Name: {{ bookdetails.bookname }}</p>
+      <p>Author Name: {{ bookdetails.authorName }}</p>
+    
+      <button (click)="resetForm()">Submit another details</button>
+    </section>
+    
